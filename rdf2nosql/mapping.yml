@@ -1,0 +1,18 @@
+entities:
+  User: 
+    name: 
+        type: [string]
+        source:['mongodb','cassandra']
+    email:
+        type: [string]
+        source: [redis]
+    following:
+        type: [User]
+        source: ['neo4j']
+  Post [real-time]:
+    body: 
+        type: [string]
+        source: ['mongodb']
+    author:
+        type: [user]
+        source: [entity]
