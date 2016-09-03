@@ -29,6 +29,12 @@ public class RDF2NoSQLTest {
 		rdf2nosql = new RDF2NoSQL();
 		model = FileManager.get().loadModel("sample.rdf");	
 	}
+	
+	@Test
+	public void insertSimpleTest(){
+		model = FileManager.get().loadModel("sample-simple.rdf");	
+		rdf2nosql.insert(model);
+	}	
 
 	@Test
 	public void insertTest(){

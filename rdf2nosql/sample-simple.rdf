@@ -1,0 +1,17 @@
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:geo="http://example.org/schema/geo#"
+  xmlns:quality="http://example.org/schema/quality#"
+  xmlns:purl="http://example.org/schema/purl#"
+  xmlns:swrlb="http://example.org/schema/swrlb#"
+  xmlns:info="http://example.org/schema/info#"
+  xmlns:nosql="http://example.org/schema/nosql#"
+  xml:base="http://example.org/data/test#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+> 
+
+<nosql:User>
+	<nosql:name>Albert Einstein</nosql:name>
+</nosql:User>
+
+</rdf:RDF>

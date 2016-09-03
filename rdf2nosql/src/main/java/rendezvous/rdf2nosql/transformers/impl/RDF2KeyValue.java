@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
 
@@ -39,15 +40,20 @@ public class RDF2KeyValue extends RDF2NoSQLTransformer{
 			
 			basicStructures.add(basicStructureSubject);
 		}
-
-		Resource object = statement.getObject().asResource();
 		
-		if(!canonicalModel.containsDataStructure(object)){
+		RDFNode node = statement.getObject();
 
-			KeyValueBasicStructure basicStructureSubject = new KeyValueBasicStructure();
+		if(node!=null && node.isResource()){
 			
-			basicStructures.add(basicStructureSubject);
+			Resource object = node.asResource();
 			
+			if(!canonicalModel.containsDataStructure(object)){
+	
+				KeyValueBasicStructure basicStructureObject = new KeyValueBasicStructure();
+				
+				basicStructures.add(basicStructureObject);
+				
+			}
 		}
 
 		fragment.setBasicStructures(basicStructures);
